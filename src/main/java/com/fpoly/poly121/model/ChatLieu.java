@@ -28,6 +28,7 @@ public class ChatLieu {
     @Column(name = "id")
     private Integer id;
 
+
     @NotBlank
     @Length(max = 50)
     @Column(name = "ten_chat_lieu")
