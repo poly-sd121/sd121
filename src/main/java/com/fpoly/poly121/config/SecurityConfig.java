@@ -24,6 +24,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
+                .csrf(csrf -> csrf.disable())
                 .authorizeRequests(authorize -> authorize
                         .requestMatchers(new AntPathRequestMatcher("/admin/**"))
                         .hasAuthority("ROLE_ADMIN")
