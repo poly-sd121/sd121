@@ -1,37 +1,48 @@
 package com.fpoly.poly121.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
-import org.hibernate.validator.constraints.Length;
+import org.hibernate.annotations.Nationalized;
 
+import java.time.LocalDate;
 
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
+@Entity
 @Table(name = "chat_lieu")
 public class ChatLieu {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
-
-    @NotBlank
-    @Length(max = 50)
+    @Nationalized
+    @Lob
     @Column(name = "ten_chat_lieu")
     private String tenChatLieu;
+
+    @Lob
+    @Column(name = "nguoi_tao")
+    private String nguoiTao;
+
+    @Column(name = "ngay_tao")
+    private LocalDate ngayTao;
+
+    @Lob
+    @Column(name = "nguoi_cap_nhat")
+    private String nguoiCapNhat;
+
+    @Column(name = "ngay_cap_nhat")
+    private LocalDate ngayCapNhat;
+
+    @Column(name = "trang_thai")
+    private Integer trangThai;
+
+    @Column(name = "da_xoa")
+    private Boolean daXoa;
 
 }
