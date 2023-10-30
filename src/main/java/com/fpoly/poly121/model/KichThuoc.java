@@ -17,7 +17,8 @@ import java.time.LocalDate;
 @Table(name = "kich_thuoc")
 public class KichThuoc {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Nationalized
