@@ -1,7 +1,9 @@
 package com.fpoly.poly121.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,36 +15,19 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 @Entity
 @Table(name = "san_pham")
+
 public class SanPham {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy =GenerationType.IDENTITY )
+    @Column(name = "id")
     private Long id;
 
-    @Nationalized
-    @Lob
+    @NotBlank
     @Column(name = "ten_san_pham")
     private String tenSanPham;
 
-    @Lob
-    @Column(name = "nguoi_tao")
-    private String nguoiTao;
-
-    @Column(name = "ngay_tao")
-    private LocalDate ngayTao;
-
-    @Lob
-    @Column(name = "nguoi_cap_nhat")
-    private String nguoiCapNhat;
-
-    @Column(name = "ngay_cap_nhat")
-    private LocalDate ngayCapNhat;
-
-    @Column(name = "trang_thai")
-    private Integer trangThai;
-
-    @Column(name = "da_xoa")
-    private Boolean daXoa;
 
 }

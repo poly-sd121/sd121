@@ -34,6 +34,7 @@ public class TrangChuController {
         } catch (Exception e) {
             log.info("truy cap chua login");
         }
+
         model.addAttribute("isAdmin", isAdmin);
         return "trang-chu";
     }
