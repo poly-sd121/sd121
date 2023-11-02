@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -20,11 +21,11 @@ public class LoaiSanPhamController {
     @GetMapping("")
     public String getAll(@RequestParam(defaultValue = "0") Integer page, Model model) {
         Page<LoaiSanPham> page1 = service.findAll(page);
-        List<LoaiSanPham> lstloaisp = page1.getContent();
-        model.addAttribute("lstloaisp", lstloaisp);
-        model.addAttribute("page", page);
-        model.addAttribute("page1", page1.getTotalPages());
-        return "loai-san-pham/loai-san-pham";
+            List<LoaiSanPham> lstloaisp = page1.getContent();
+            model.addAttribute("lstloaisp", lstloaisp);
+            model.addAttribute("page", page);
+            model.addAttribute("page1", page1.getTotalPages());
+            return "loai-san-pham/loai-san-pham";
     }
 
     /*@RequestMapping("")

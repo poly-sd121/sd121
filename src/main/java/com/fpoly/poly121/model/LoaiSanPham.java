@@ -18,7 +18,9 @@ import java.time.LocalDate;
 public class LoaiSanPham {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy =GenerationType.IDENTITY )
     private Long id;
+
 
     @Nationalized
     @Lob
