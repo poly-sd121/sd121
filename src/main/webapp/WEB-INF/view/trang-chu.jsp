@@ -79,8 +79,12 @@
                                 <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
                             </ul>
                         </li>
-                        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-                        <li class="scroll-to-section"><a href="/">Login</a></li>
+                        <li class="submenu">
+                            <a href="javascript:;">Tai Khoan</a>
+                            <ul>
+                                <li><a href="/auth/dang-nhap">LogOut</a></li>
+                            </ul>
+                        </li>
 
                     </ul>
                     <a class='menu-trigger'>

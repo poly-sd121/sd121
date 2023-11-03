@@ -38,29 +38,28 @@ public class SanPhamController {
     }
 
     @PostMapping("add")
-    public String add(@Validated @ModelAttribute SanPham sanPham, BindingResult bindingResult) {
+    public String add(@Validated @ModelAttribute SanPham sanPham, BindingResult bindingResult ,Model model) {
         if (bindingResult.hasErrors()) {
+            model.addAttribute("errors", "Khong de trong !");
             return "san_pham/add";
+        } else {
+            sanPhamService.add(sanPham);
+            return "redirect:/san-pham/index";
         }
-        sanPhamService.add(sanPham);
-        return "redirect:/san-pham/index";
     }
 
     @PostMapping("update/{id}")
-    public String update(@PathVariable Integer id, @Valid @ModelAttribute SanPham sanPham) {
-        sanPhamService.update(sanPham);
-        return "redirect:/san-pham/index";
-    }
+    public String update( @PathVariable Long id, @Valid @ModelAttribute SanPham sanPham ,BindingResult bindingResult ,Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("errors","Khong de trong !");
+            SanPham sanPham1 = sanPhamService.detail(id);
+            model.addAttribute("sp", sanPham1);
+            return "san_pham/update";
+        } else {
+            sanPhamService.update(sanPham);
+            return "redirect:/san-pham/index";
+        }
 
-    @PostMapping("update/")
-    public String updateEmpty(@RequestParam(defaultValue = "0") Integer page, Model model) {
-        model.addAttribute("errorsUpdate", "Chưa đủ thông tin cần cập nhật !");
-        Page<SanPham> page1 = sanPhamService.getAll(page);
-        listSp = page1.getContent();
-        model.addAttribute("listSp", listSp);
-        model.addAttribute("page", page);
-        model.addAttribute("page1", page1.getTotalPages());
-        return "san_pham/index";
     }
 
     @GetMapping("delete/{id}")
@@ -74,6 +73,12 @@ public class SanPhamController {
     @GetMapping("form-add")
     public String formAdd() {
         return "san_pham/add";
+    }
+    @GetMapping("form-update/{id}")
+    public String formUpdate( @PathVariable Long id , Model model) {
+        SanPham sanPham = sanPhamService.detail(id);
+        model.addAttribute("sp", sanPham);
+        return "san_pham/update";
     }
 
     @GetMapping("search")
@@ -92,7 +97,6 @@ public class SanPhamController {
         model.addAttribute("page1", page1.getTotalPages());
         SanPham sanPham = sanPhamService.detail(id);
         model.addAttribute("sp", sanPham);
-        model.addAttribute("update", "Update San Pham");
         return "san_pham/index";
     }
 }

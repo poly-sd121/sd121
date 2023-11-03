@@ -1,11 +1,23 @@
 package com.fpoly.poly121.model;
 
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
+import org.hibernate.validator.cfg.defs.DecimalMinDef;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -18,7 +30,8 @@ import java.time.LocalDate;
 @Table(name = "san_pham_chi_tiet")
 public class SanPhamChiTiet {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -54,29 +67,14 @@ public class SanPhamChiTiet {
     @Column(name = "so_luong")
     private Long soLuong;
 
-    @Nationalized
-    @Lob
     @Column(name = "mo_ta")
     private String moTa;
 
-    @Lob
-    @Column(name = "nguoi_tao")
-    private String nguoiTao;
-
-    @Column(name = "ngay_tao")
-    private LocalDate ngayTao;
-
-    @Lob
-    @Column(name = "nguoi_cap_nhat")
-    private String nguoiCapNhat;
-
-    @Column(name = "ngay_cap_nhat")
-    private LocalDate ngayCapNhat;
+    @Column(name = "link_anh")
+    private String linkAnh;
 
     @Column(name = "trang_thai")
     private Integer trangThai;
 
-    @Column(name = "da_xoa")
-    private Boolean daXoa;
 
 }

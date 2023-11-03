@@ -17,32 +17,10 @@ import java.time.LocalDate;
 @Table(name = "mau_sac")
 public class MauSac {
     @Id
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
 
-    @Nationalized
-    @Lob
     @Column(name = "ten_mau")
-    private String tenMau;
-
-    @Lob
-    @Column(name = "nguoi_tao")
-    private String nguoiTao;
-
-    @Column(name = "ngay_tao")
-    private LocalDate ngayTao;
-
-    @Lob
-    @Column(name = "nguoi_cap_nhat")
-    private String nguoiCapNhat;
-
-    @Column(name = "ngay_cap_nhat")
-    private LocalDate ngayCapNhat;
-
-    @Column(name = "trang_thai")
-    private Integer trangThai;
-
-    @Column(name = "da_xoa")
-    private Boolean daXoa;
-
+    private String tenMauSac;
 }
