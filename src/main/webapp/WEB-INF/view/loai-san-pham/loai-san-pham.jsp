@@ -78,14 +78,17 @@
     </c:if>
   </div>
   <div>
-    <c:if test="${empty param.tenLoai}">
+    <c:catch var ="catchException">
+  <c:if test="${empty param.tenLoai}">
       <c:forEach begin="0" end="${page1 - 1}" varStatus="i">
         <button class="btn btn-outline-success"><a class="navbar-brand"
                                                    href="/loai-san-pham?page=${i.index}">${i.index + 1}</a>
         </button>
       </c:forEach>
-    </c:if>
-  </div>
+  </c:if>
+    </c:catch>
+  -</div>
+
   <div>
     <c:if test="${page < page1 - 1}">
       <button class="btn btn-outline-success" type="submit"><a class="navbar-brand" href="?page=${page + 1 }">Trang
