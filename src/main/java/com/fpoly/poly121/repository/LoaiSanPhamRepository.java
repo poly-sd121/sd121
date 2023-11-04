@@ -16,7 +16,7 @@ public interface LoaiSanPhamRepository extends JpaRepository<LoaiSanPham,Long> {
     List<LoaiSanPham> getLoaiSanPham();
     @Query("SELECT c from LoaiSanPham c where c.daXoa !=true")
     Page<LoaiSanPham> findAll(Pageable pageable);
-    @Query("SELECT c from LoaiSanPham c where c.tenLoai like %:tenLoai%")
+    @Query("SELECT c from LoaiSanPham c where c.daXoa !=true and c.tenLoai like %:tenLoai%")
     List<LoaiSanPham> search(String tenLoai);
     //Page<LoaiSanPham> findLoaiSanPhamByTenLoai(Pageable pageable);
     //List<LoaiSanPham> findLoaiSanPhamByTenLoai(String tenLoai);
