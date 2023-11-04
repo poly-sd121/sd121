@@ -18,6 +18,7 @@ import java.time.LocalDate;
 public class ThuongHieu {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Nationalized
