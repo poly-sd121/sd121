@@ -108,6 +108,7 @@
                 </c:if>
             </div>
             <div>
+                <c:catch var ="catchException">
                 <c:if test="${ empty param.tenKichThuoc}">
                     <c:forEach begin="0" end="${page1 - 1}" varStatus="i">
                         <button class="btn btn-outline-success"><a class="navbar-brand"
@@ -115,6 +116,7 @@
                         </button>
                     </c:forEach>
                 </c:if>
+                </c:catch>
             </div>
             <div>
                 <c:if test="${page < page1 - 1}">
