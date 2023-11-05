@@ -49,7 +49,7 @@ public class LoaiSanPhamController {
 
     @GetMapping("update/{id}")
     public String update(ModelMap model, @PathVariable Long id) {
-        LoaiSanPham loaisp = service.delete(id);
+        LoaiSanPham loaisp = service.findById(id);
         model.addAttribute("updloaisp", loaisp);
         return "loai-san-pham/loai-san-pham-update";
     }

@@ -25,6 +25,13 @@
 <form:form method="POST" action="/loai-san-pham/add" modelAttribute="loaisp">
   <label>Tên Loại Sản Phẩm: </label>
   <input type="text" name="tenLoai" required/><br/>
+  <label>Giới Tính Loại SP: </label>
+  <select name="gioiTinh">
+  <option value="Nam" selected>Nam</option>
+  <option value="Nữ">Nữ</option>
+  </select><br/>
+  <label>Tên Danh Mục: </label>
+  <input type="text" name="danhMuc" required/><br/>
   <input type="submit" value="Thêm Sản Phẩm"/>
 </form:form>
 <br>
@@ -37,6 +44,8 @@
 
       <td scope="col">Id</td>
       <td scope="col">Tên Loại</td>
+      <td scope="col">Loại Giới Tính</td>
+      <td scope="col">Danh Mục</td>
       <td scope="col">Người Tạo</td>
       <td scope="col">Ngày Tạo</td>
       <td scope="col">Ngày Cập Nhật</td>
@@ -51,6 +60,8 @@
 
     <td scope="row">${category.id}</td>
     <td scope="row">${category.tenLoai}</td>
+    <td scope="row">${category.gioiTinh}</td>
+    <td scope="row">${category.danhMuc}</td>
     <td scope="row">${category.nguoiTao}</td>
     <td scope="row">${category.ngayTao}</td>
     <td scope="row">${category.ngayCapNhat}</td>
