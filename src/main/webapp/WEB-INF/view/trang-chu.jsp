@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +12,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Hexashop Ecommerce HTML CSS Template</title>
+    <title>POLY121 SHOP</title>
 
 
     <!-- Additional CSS Files -->
@@ -49,7 +52,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="main-nav">
+                <nav class="main-nav" style="text-transform: uppercase">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
                         <img src="assets/images/logo.png">
@@ -57,31 +60,68 @@
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                        <li class="scroll-to-section"><a href="#men">Men's</a></li>
-                        <li class="scroll-to-section"><a href="#women">Women's</a></li>
-                        <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
-                        <li class="submenu">
-                            <a href="javascript:;">Pages</a>
+                        <li class="scroll-to-section"><a href="#top" class="active">TRANG CHỦ</a></li>
+                        <li class="scroll-to-section submenu">
+                            <a href="#men">NAM</a>
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="products.html">Products</a></li>
-                                <li><a href="single-product.html">Single Product</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="about.html">Áo khoác</a></li>
+                                <li><a href="about.html">Áo phông</a></li>
+                                <li><a href="about.html">Quần jean</a></li>
                             </ul>
                         </li>
-                        <li class="submenu">
-                            <a href="javascript:;">Features</a>
+                        <li class="scroll-to-section submenu">
+                            <a href="#women">NỮ</a>
                             <ul>
-                                <li><a href="#">Features Page 1</a></li>
-                                <li><a href="#">Features Page 2</a></li>
-                                <li><a href="#">Features Page 3</a></li>
-                                <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
+                                <li><a href="about.html">Áo khoác</a></li>
+                                <li><a href="about.html">Áo phông</a></li>
+                                <li><a href="about.html">Quần jean</a></li>
                             </ul>
                         </li>
-                        <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-                        <li class="scroll-to-section"><a href="/">Login</a></li>
-
+<%--                        <li class="scroll-to-section submenu">--%>
+<%--                            <a href="#kids">TRẺ EM</a>--%>
+<%--                            <ul>--%>
+<%--                                <li><a href="about.html">Áo khoác</a></li>--%>
+<%--                                <li><a href="about.html">Áo phông</a></li>--%>
+<%--                                <li><a href="about.html">Quần jean</a></li>--%>
+<%--                            </ul>--%>
+<%--                        </li>--%>
+                        <li class="submenu">
+                            <a href="">VỀ POLY121</a>
+                            <ul>
+                                <li><a href="about.html">BẢO VỆ KHÁCH HÀNG</a></li>
+                                <li><a href="about.html">ƯU ĐÃI & CHÍNH SÁCH</a></li>
+                                <li><a href="about.html">CÂU CHUYỆN</a></li>
+                            </ul>
+                        </li>
+                        <li class="scroll-to-section"><a href=""><svg style="margin-top: -3px" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+                        </svg>   GIỎ HÀNG</a></li>
+                        <c:if test="${!isAuth}">
+                            <li class="scroll-to-section" style="margin-right: -25px"><a href="/auth/dang-ky"><svg style="margin-top: -3px" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                            </svg>   ĐĂNG KÝ |</a></li>
+                            <li class="scroll-to-section"><a href="/auth/dang-nhap">ĐĂNG NHẬP</a></li>
+                        </c:if>
+                        <c:if test="${isAuth}">
+                            <li class="submenu">
+                                <a href="#"><svg style="margin-top: -3px" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                </svg><c:if test="${isAdmin}">   ADMIN</c:if>
+                                    <c:if test="${isStaff}">   NHÂN VIÊN</c:if>
+                                    <c:if test="${isUser}">   CÁ NHÂN</c:if>
+                                </a>
+                                <ul>
+                                    <li><a href="about.html" style="font-size: 16px; text-transform: uppercase">${username}</a></li>
+                                    <c:if test="${isAdmin}">
+                                        <li><a href="about.html">QUẢN LÝ </a></li>
+                                    </c:if>
+                                    <li><a href="about.html">ĐỔI MẬT KHẨU</a></li>
+                                    <li><a href="about.html">ĐĂNG XUẤT</a></li>
+                                </ul>
+                            </li>
+                        </c:if>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
