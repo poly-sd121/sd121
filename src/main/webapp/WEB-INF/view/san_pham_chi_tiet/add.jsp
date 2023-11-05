@@ -100,7 +100,7 @@
 
     <div class="input-group input-group-sm mb-3">
         <label class="input-group-text" for="validationCustom03" class="form-label">Anh</label>
-        <input type="text" name="linkAnh" maxlength="50" class="form-control" id="validationCustom03"
+        <input type="file" name="linkAnh" maxlength="50" class="form-control" id="validationCustom03"
                value="${spct.linkAnh}" required>
     </div>
 
