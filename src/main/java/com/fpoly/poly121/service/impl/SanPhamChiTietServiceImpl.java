@@ -46,8 +46,20 @@ public class SanPhamChiTietServiceImpl implements SanPhamChiTietService {
         return sanPhamChiTietRepository.getById(id);
     }
 
-//    @Override
-//    public List<SanPhamChiTiet> search( String tenSanPhamChiTiet) {
-//        return sanPhamChiTietRepository.search(tenSanPhamChiTiet);
-//    }
+    @Override
+    public List<SanPhamChiTiet> search(String keyword) {
+        return sanPhamChiTietRepository.search(keyword);
+    }
+
+    @Override
+    public List<SanPhamChiTiet> search2(String keyword2, String keyword3) {
+        return sanPhamChiTietRepository.search2(keyword2,keyword3);
+    }
+
+    @Override
+    public List<SanPhamChiTiet> search3(String sl) {
+        return sanPhamChiTietRepository.search3();
+    }
+
+
 }
