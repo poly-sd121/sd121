@@ -2,6 +2,7 @@ package com.fpoly.poly121.service;
 
 import com.fpoly.poly121.dto.request.TaiKhoanDto;
 import com.fpoly.poly121.model.KhachHang;
+import com.fpoly.poly121.model.NhanVien;
 import com.fpoly.poly121.repository.KhachHangRepository;
 import com.fpoly.poly121.repository.TaiKhoanRepository;
 import com.fpoly.poly121.security.dto.TaiKhoan;
