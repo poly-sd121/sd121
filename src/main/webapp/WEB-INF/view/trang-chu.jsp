@@ -115,10 +115,13 @@
                                 <ul>
                                     <li><a href="about.html" style="font-size: 16px; text-transform: uppercase">${username}</a></li>
                                     <c:if test="${isAdmin}">
-                                        <li><a href="about.html">QUẢN LÝ </a></li>
+                                        <li><a href="about.html">QUẢN LÝ</a></li>
+                                    </c:if>
+                                    <c:if test="${isAdmin || isStaff}">
+                                        <li><a href="about.html">BÁN HÀNG</a></li>
                                     </c:if>
                                     <li><a href="about.html">ĐỔI MẬT KHẨU</a></li>
-                                    <li><a href="about.html">ĐĂNG XUẤT</a></li>
+                                    <li><a href="/logout">ĐĂNG XUẤT</a></li>
                                 </ul>
                             </li>
                         </c:if>

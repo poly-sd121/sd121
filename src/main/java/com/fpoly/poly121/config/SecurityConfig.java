@@ -38,6 +38,8 @@ public class SecurityConfig {
                         .loginPage("/auth/dang-nhap")
                         .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/trang-chu"))
+                .logout(logout -> logout
+                        .logoutSuccessUrl("/trang-chu"))
                 .httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
     }
