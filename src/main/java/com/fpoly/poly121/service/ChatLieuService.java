@@ -13,4 +13,5 @@ public interface ChatLieuService {
     void delete(Integer id);
     ChatLieu detail(Integer id);
     List<ChatLieu> search (String tenChatLieu);
+    List<ChatLieu> getList();
 }

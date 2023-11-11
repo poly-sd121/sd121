@@ -19,4 +19,5 @@ public interface ThuongHieuService {
     void update(ThuongHieu thuongHieu);
 
     void delete(Long id);
+    List<ThuongHieu> getAll();
 }

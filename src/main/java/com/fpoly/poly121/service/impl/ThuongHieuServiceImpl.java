@@ -56,5 +56,9 @@ public class ThuongHieuServiceImpl implements ThuongHieuService {
     public  ThuongHieu getById(Long id){
         return  thuongHieuRepository.findById(id).orElse(null);
     }
+    @Override
+    public List<ThuongHieu> getAll() {
+        return thuongHieuRepository.findAll();
+    }
 
 }

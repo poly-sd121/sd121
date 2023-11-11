@@ -25,6 +25,11 @@ public class ChatLieuServiceImpl implements ChatLieuService {
     }
 
     @Override
+    public List<ChatLieu> getList() {
+        return chatLieuRepository.findAll();
+    }
+
+    @Override
     public void add(ChatLieu chatLieu) {
         chatLieuRepository.save(chatLieu);
 

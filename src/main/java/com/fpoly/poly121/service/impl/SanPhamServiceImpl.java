@@ -36,6 +36,11 @@ public class SanPhamServiceImpl implements SanPhamService {
     }
 
     @Override
+    public List<SanPham> getAll() {
+        return sanPhamRepository.findAll();
+    }
+
+    @Override
     public void delete(Long id) {
         sanPhamRepository.deleteById(id);
 
