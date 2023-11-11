@@ -17,4 +17,5 @@ public interface KichThuocService {
     KichThuoc detail(long id);
 
     List<KichThuoc> search(String tenKichThuoc);
+    List<KichThuoc> getList();
 }

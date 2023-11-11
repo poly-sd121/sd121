@@ -25,6 +25,11 @@ public class KichThuocServiceImpl implements KichThuocService {
     }
 
     @Override
+    public List<KichThuoc> getList() {
+        return repo.findAll();
+    }
+
+    @Override
     public void add(KichThuoc kichThuoc) {
         repo.save(kichThuoc);
     }

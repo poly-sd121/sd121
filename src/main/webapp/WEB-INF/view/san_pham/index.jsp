@@ -11,11 +11,6 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body class="container">
-
-
-<h2 style="text-align: center ; margin-top: 20px">${update}</h2>
-
-
 <form class="row g-3 needs-validation" novalidate method="post" action="/san-pham/update/${sp.id}">
     <label class="form-label">ID</label>
     <input disabled name="id" type="text" class="form-control" value="${sp.id}">
@@ -27,10 +22,7 @@
         Please provide a valid name.
     </div>
     <br>
-    <p style="color: red">${errorsUpdate}</p>
-    <button class="btn btn-outline-success" type="submit">Update</button>
 </form>
-<br>
 <br>
 <button class="btn btn-outline-success" type="button"><a class="navbar-brand" href="/san-pham/form-add">Add</a>
 </button>
@@ -71,7 +63,8 @@
         <td scope="row">
             <button class="btn btn-outline-success"><a class="navbar-brand" href="/san-pham/delete/${sp.id}">❌</a>
             </button>
-            <button class="btn btn-outline-success"><a class="navbar-brand" href="/san-pham/detail/${sp.id}">👁️‍</a>
+            <button class="btn btn-outline-success"><a class="navbar-brand" href="/san-pham/detail/${sp.id}">👁</a></button>
+            <button class="btn btn-outline-success"><a class="navbar-brand" href="/san-pham/form-update/${sp.id}">(+)</a>
             </button>
         </td>
     </tr>
@@ -90,7 +83,6 @@
         </c:if>
     </div>
     <div>
-        <c:catch var ="catchException">
         <c:if test="${ empty param.tenSanPham}">
         <c:forEach begin="0" end="${page1 - 1}" varStatus="i">
             <button class="btn btn-outline-success"><a class="navbar-brand"
@@ -98,7 +90,6 @@
             </button>
         </c:forEach>
         </c:if>
-        </c:catch>
     </div>
     <div>
         <c:if test="${page < page1 - 1}">

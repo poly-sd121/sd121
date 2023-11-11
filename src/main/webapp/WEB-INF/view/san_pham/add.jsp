@@ -21,6 +21,8 @@
     <div class="invalid-feedback">
         Please provide a valid name.
     </div>
+    <span style="color: red">${errors}</span>
+
 
     <br>
 

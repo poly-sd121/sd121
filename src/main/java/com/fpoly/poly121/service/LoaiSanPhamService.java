@@ -16,4 +16,5 @@ public interface LoaiSanPhamService {
     LoaiSanPham delete(Long id);
     Page<LoaiSanPham> getByPage(int pageNumber);
     List<LoaiSanPham> search(String tenLoai);
+    List<LoaiSanPham> getAll();
 }

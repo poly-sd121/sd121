@@ -91,4 +91,9 @@ public class LoaiSanPhamServiceImpl implements LoaiSanPhamService {
         Pageable pageable = PageRequest.of(page, 5);
         return loaiSanPhamRepository.findAll(pageable);
     }
+
+    @Override
+    public List<LoaiSanPham> getAll() {
+        return loaiSanPhamRepository.getLoaiSanPham();
+    }
 }

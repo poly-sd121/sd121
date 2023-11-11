@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface SanPhamService {
     Page<SanPham> getAll(Integer page);
+    List<SanPham> getAll();
     void add(SanPham sanPham);
     void update(SanPham sanPham);
     void delete(Long id);
