@@ -78,6 +78,12 @@ public class SanPhamChiTiet {
     @Column(name = "anh_san_pham")
     private String anhSanPham;
 
+    @Column(name = "ngay_tao")
+    private String ngayTao;
+
+    @Column(name = "ngay_cap_nhat")
+    private String ngayCapNhat;
+
     @Column(name = "trang_thai")
     private Integer trangThai;
 
