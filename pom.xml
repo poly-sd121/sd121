@@ -91,7 +91,18 @@
 			<artifactId>mssql-jdbc</artifactId>
 			<version>9.4.1.jre16</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>5.1.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.11.0</version> <!-- Bạn có thể kiểm tra phiên bản mới nhất trên trang web chính thức của Commons IO -->
+		</dependency>
 	</dependencies>
+
 
 	<build>
 		<plugins>

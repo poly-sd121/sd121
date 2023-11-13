@@ -28,6 +28,8 @@ public class SecurityConfig {
                 .authorizeRequests(authorize -> authorize
                         .requestMatchers(new AntPathRequestMatcher("/admin/**"))
                         .hasAuthority("ROLE_ADMIN")
+                        .requestMatchers(new AntPathRequestMatcher("/staff/**"))
+                        .hasAuthority("ROLE_STAFF")
                         .requestMatchers(new AntPathRequestMatcher("/user/**"))
                         .authenticated()
                         .anyRequest()
@@ -36,6 +38,8 @@ public class SecurityConfig {
                         .loginPage("/auth/dang-nhap")
                         .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/trang-chu"))
+                .logout(logout -> logout
+                        .logoutSuccessUrl("/trang-chu"))
                 .httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
     }

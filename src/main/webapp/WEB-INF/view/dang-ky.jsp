@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<section style=" background:url('/assets/images/left-banner-image.jpg')">
+<section style=" background:url('/assets/images/Gucci_HP_Desktop_CinamaticLandscape_Gucci-Sustainable-Horsebit-Nov23-SHOT-6-A.png')">
     <div class="form-box">
         <div class="form-value">
             <form method="POST" action="/auth/dang-ky" id="registerForm" modelAttribute="registerForm">

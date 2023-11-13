@@ -12,7 +12,7 @@
 
 </head>
 <body>
-<section style=" background:url('/assets/images/left-banner-image.jpg')">
+<section style=" background:url('/assets/images/Gucci_HP_Desktop_CinamaticLandscape_Gucci-Sustainable-Horsebit-Nov23-SHOT-6-A.png')">
     <div class="form-box">
         <div class="form-value">
             <form method="post" action="/login">
@@ -23,7 +23,7 @@
                     <label for="username">Tài khoản</label>
                 </div>
                 <div class="inputbox">
-                    <input type="text" id="password" name="password" required />
+                    <input type="password" id="password" name="password" required />
                     <label for="password">Mật khẩu</label>
                 </div>
 

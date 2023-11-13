@@ -18,6 +18,7 @@ import java.time.LocalDate;
 public class LoaiSanPham {
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Nationalized
@@ -28,6 +29,12 @@ public class LoaiSanPham {
     @Lob
     @Column(name = "nguoi_tao")
     private String nguoiTao;
+
+    @Column(name = "gioi_tinh")
+    private String gioiTinh;
+
+    @Column(name = "danh_muc")
+    private String danhMuc;
 
     @Column(name = "ngay_tao")
     private LocalDate ngayTao;
