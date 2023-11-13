@@ -212,7 +212,7 @@
             </ul>
         </c:if>
 
-        <img  style="height: 1.9rem ; position: absolute; width: 3.5rem"  id="anh" onclick="phongToAnh()" onmouseout="phongNhoAnh()" src="${spct.anhSanPham}">
+        <img  style="height: 1.9rem ; position: absolute; width: 3.5rem"  id="anh" onclick="phongToAnh()" onmouseout="phongNhoAnh()" src="/assets/images/imgSp/${spct.anhSanPham}">
 
     <br>
     <button class="btn btn-outline-success" type="submit" onclick="confirmAction()">Cập nhật </button>

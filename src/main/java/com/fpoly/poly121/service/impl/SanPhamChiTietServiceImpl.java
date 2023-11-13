@@ -42,10 +42,10 @@ public class  SanPhamChiTietServiceImpl implements SanPhamChiTietService {
             uploadedFile.setWritable(true);
             file.transferTo(uploadedFile);
             System.out.println("File uploaded to: " + uploadedFile.getAbsolutePath());
-            sanPhamChiTiet.setAnhSanPham("/" + relativePath + fileName);
+            sanPhamChiTiet.setAnhSanPham(fileName);
             sanPhamChiTietRepository.save(sanPhamChiTiet);
         } catch (IOException e) {
-            sanPhamChiTiet.setAnhSanPham("https://support.sapo.vn/Upload/ImageManager/Image/HaBTT/Sapoweb/San%20pham/sp6.jpg");
+            sanPhamChiTiet.setAnhSanPham("anh_trong.png");
             sanPhamChiTietRepository.save(sanPhamChiTiet);
             e.printStackTrace();
         }
@@ -66,10 +66,12 @@ public class  SanPhamChiTietServiceImpl implements SanPhamChiTietService {
 
     @Override
     public void xoaAnh(Long id) {
+        SanPhamChiTiet sanPhamChiTiet = new SanPhamChiTiet();
         String fileName = sanPhamChiTietRepository.deleteAnh(id);
+        String relativePath = "assets/images/imgSp/" + fileName;
         if (fileName != null) {
-            String filePath = "H:\\DATN\\src\\main\\webapp\\assets\\images\\imgSp\\" + fileName; // Đường dẫn của file ảnh
-            File fileToDelete = new File(filePath);
+            String absolutePath = FileUtils.getFile("../../../../DATN/src/main/webapp", relativePath).getAbsolutePath();
+            File fileToDelete = new File(absolutePath);
             if (fileToDelete.exists() && fileToDelete.delete()) {
                 System.out.println("File đã được xóa thành công.");
                 System.out.println("File đã được xóa thành công." + fileName);

@@ -93,9 +93,8 @@
         <td scope="row">${spct.soLuong}</td>
         <td scope="row">${spct.moTa}</td>
         <td scope="row"><a href="/san-pham-chi-tiet/detail/${spct.id}"><img style="width: 6rem ;height: 8rem"
-                                                                            src="${spct.anhSanPham}"></a>
+                                                                            src="/assets/images/imgSp/${spct.anhSanPham}"></a>
         </td>
-
         <td scope="row">
             <button class="btn btn-outline-success"><a onclick="confirmAction()" class="navbar-brand"
                                                        href="/san-pham-chi-tiet/delete/${spct.id}">❌</a>

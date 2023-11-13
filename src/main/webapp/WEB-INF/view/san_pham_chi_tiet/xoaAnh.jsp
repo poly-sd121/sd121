@@ -24,7 +24,7 @@
     <c:forEach items="${listSpct}" var="spct">
     <tr style="flex-direction: row ">
         <td scope="row">${spct.idSanPham.tenSanPham}</td>
-        <td scope="row"><img style="width: 6rem ;height: 8rem" src="${spct.anhSanPham}"></td>
+        <td scope="row"><img style="width: 6rem ;height: 8rem" src="/assets/images/imgSp/${spct.anhSanPham}"></td>
         <td scope="row">
             <button style=""><a class="navbar-brand"
                                 href="/san-pham-chi-tiet/xoaAnh/${spct.id}">❌</a>
