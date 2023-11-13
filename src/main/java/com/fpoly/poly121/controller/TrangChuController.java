@@ -2,6 +2,7 @@ package com.fpoly.poly121.controller;
 
 import com.fpoly.poly121.model.LoaiSanPham;
 import com.fpoly.poly121.model.SanPhamChiTiet;
+import com.fpoly.poly121.repository.KhachHangRepository;
 import com.fpoly.poly121.repository.TaiKhoanRepository;
 import com.fpoly.poly121.service.impl.TrangChuServiceImpl;
 import com.fpoly.poly121.utils.SecurityUtil;
@@ -26,8 +27,8 @@ import java.util.Objects;
 public class TrangChuController {
 
     private final TaiKhoanRepository taiKhoanRepository;
-    @Autowired
-    private TrangChuServiceImpl service;
+    private final TrangChuServiceImpl service;
+    private final KhachHangRepository khachHangRepository;
 
     @GetMapping
     public String view(Model model) {
@@ -38,9 +39,10 @@ public class TrangChuController {
         model.addAttribute("isStaff", SecurityUtil.checkIsStaff(taiKhoanRepository));
         model.addAttribute("isUser", SecurityUtil.checkIsUser(taiKhoanRepository));
         model.addAttribute("isAuth", SecurityUtil.checkIsAuth(taiKhoanRepository));
-        model.addAttribute("username", SecurityUtil.getUsernameLogin(taiKhoanRepository));
         model.addAttribute("spNamMN", namMN);
         model.addAttribute("spNuMN", nuMN);
+        model.addAttribute("username", SecurityUtil.getUsernameLogin());
+        model.addAttribute("idKh", SecurityUtil.getIdKhachHangLogin(khachHangRepository, taiKhoanRepository));
         return "trang-chu";
     }
 

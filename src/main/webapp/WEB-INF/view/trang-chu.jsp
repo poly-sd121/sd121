@@ -272,11 +272,11 @@
                                         <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
-                                <img src="../../../assets/images/imgSp/${spNamM.anhSanPham}.png" alt="">
+                                <img src="../../../assets/images/imgSp/${spNamM.anhSanPham}" alt="">
                             </div>
                             <div class="down-content">
                                 <h4>${spNamM.idSanPham.tenSanPham}</h4>
-                                <span>${spNamM.giaBan}(đơn vị giá)</span>
+                                <span>${spNamM.giaBan}VNĐ</span>
                                 <%--<ul class="stars">
                                     <li><i class="fa fa-star"></i></li>
                                     <li><i class="fa fa-star"></i></li>
@@ -434,11 +434,11 @@
                                         <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
-                                <img src="../../../assets/images/imgSp/${spNuM.anhSanPham}.png" alt="">
+                                <img src="../../../assets/images/imgSp/${spNuM.anhSanPham}" alt="">
                             </div>
                             <div class="down-content">
                                 <h4>${spNuM.idSanPham.tenSanPham}</h4>
-                                <span>${spNuM.giaBan}(đơn vị giá)</span>
+                                <span>${spNuM.giaBan}VNĐ</span>
                                 <%--<ul class="stars">
                                     <li><i class="fa fa-star"></i></li>
                                     <li><i class="fa fa-star"></i></li>

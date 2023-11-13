@@ -1,5 +1,7 @@
 package com.fpoly.poly121.utils;
 
+import com.fpoly.poly121.model.KhachHang;
+import com.fpoly.poly121.repository.KhachHangRepository;
 import com.fpoly.poly121.repository.TaiKhoanRepository;
 import com.fpoly.poly121.security.dto.TaiKhoan;
 import org.springframework.security.core.Authentication;
@@ -57,7 +59,7 @@ public class SecurityUtil {
         return isUser;
     }
 
-    public static String getUsernameLogin(TaiKhoanRepository taiKhoanRepository) {
+    public static String getUsernameLogin() {
         String username = "";
         try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -66,5 +68,18 @@ public class SecurityUtil {
         } catch (Exception e) {
         }
         return username;
+    }
+
+    public static Long getIdKhachHangLogin(KhachHangRepository khachHangRepository, TaiKhoanRepository taiKhoanRepository) {
+        Long id = null;
+        try {
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            TaiKhoan taiKhoan = taiKhoanRepository.findByTenTaiKhoan(userDetails.getUsername());
+            KhachHang khachHang = khachHangRepository.findFirstByTenTaiKhoanAndDaXoa(taiKhoan, 0);
+            id = khachHang.getId();
+        } catch (Exception e) {
+        }
+        return id;
     }
 }
