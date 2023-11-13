@@ -11,22 +11,22 @@ import java.util.List;
 public interface TrangChuRepository extends JpaRepository<SanPhamChiTiet,Long> {
     @Query("SELECT spct FROM SanPhamChiTiet spct " +
             "INNER JOIN SanPham sp ON spct.id = sp.id where spct.idLoaiSanPham.gioiTinh = 'Nam'" +
-            "order by spct.ngayCapNhat DESC")
+            "order by spct.ngayTao DESC")
     List<SanPhamChiTiet> getAllNamMoiNhat();
 
     @Query("SELECT spct FROM SanPhamChiTiet spct " +
             "INNER JOIN SanPham sp ON spct.id = sp.id where spct.idLoaiSanPham.gioiTinh = 'Nam'" +
-            "order by spct.ngayCapNhat DESC")
+            "order by spct.ngayTao DESC")
     List<SanPhamChiTiet> getAllNamNhieuNhat();
 
     @Query("SELECT spct FROM SanPhamChiTiet spct " +
             "INNER JOIN SanPham sp ON spct.id = sp.id where spct.idLoaiSanPham.gioiTinh != 'Nam'" +
-            "order by spct.ngayCapNhat DESC")
+            "order by spct.ngayTao DESC")
     List<SanPhamChiTiet> getAllNuMoiNhat();
 
     @Query("SELECT spct FROM SanPhamChiTiet spct " +
             "INNER JOIN SanPham sp ON spct.id = sp.id where spct.idLoaiSanPham.gioiTinh != 'Nam'" +
-            "order by spct.ngayCapNhat DESC")
+            "order by spct.ngayTao DESC")
     List<SanPhamChiTiet> getAllNuNhieuNhat();
 }
 
