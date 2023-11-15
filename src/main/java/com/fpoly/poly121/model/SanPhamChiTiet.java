@@ -1,6 +1,7 @@
 package com.fpoly.poly121.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -37,26 +38,26 @@ public class SanPhamChiTiet {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "id_san_pham")
     private SanPham idSanPham;
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_loai_san_pham")
     private LoaiSanPham idLoaiSanPham;
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_mau_sac")
     private MauSac idMauSac;
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_kich_thuoc")
     private KichThuoc idKichThuoc;
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_thuong_hieu")
     private ThuongHieu idThuongHieu;
-
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_chat_lieu")
     private ChatLieu idChatLieu;

@@ -1,6 +1,7 @@
 package com.fpoly.poly121.service;
 
 
+import com.fpoly.poly121.dto.sanphamchitiet.SanPhamChiTietDto;
 import com.fpoly.poly121.model.SanPhamChiTiet;
 import org.springframework.data.domain.Page;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +15,7 @@ public interface SanPhamChiTietService {
     void delete(Long id);
     void xoaAnh(Long id);
     SanPhamChiTiet detail(Long id);
+    SanPhamChiTietDto findById(Long id);
     List<SanPhamChiTiet> search(String keyword);
     List<SanPhamChiTiet> search2(String keyword2 , String keyword3);
     List<SanPhamChiTiet> search3(String sl);

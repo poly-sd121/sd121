@@ -1,5 +1,6 @@
 package com.fpoly.poly121.service.impl;
 
+import com.fpoly.poly121.dto.sanphamchitiet.SanPhamChiTietDto;
 import com.fpoly.poly121.model.SanPhamChiTiet;
 import com.fpoly.poly121.repository.SanPhamChiTietReponsitory;
 import com.fpoly.poly121.service.SanPhamChiTietService;
@@ -15,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Service
-public class  SanPhamChiTietServiceImpl implements SanPhamChiTietService {
+public class SanPhamChiTietServiceImpl implements SanPhamChiTietService {
     @Autowired
     private SanPhamChiTietReponsitory sanPhamChiTietRepository;
 
@@ -38,7 +39,7 @@ public class  SanPhamChiTietServiceImpl implements SanPhamChiTietService {
 //            }
 
             String fileName = file.getOriginalFilename();
-            File uploadedFile = new File( uploadPath + fileName);
+            File uploadedFile = new File(uploadPath + fileName);
             file.transferTo(uploadedFile);
             System.out.println("File uploaded to: " + uploadPath + fileName);
 
@@ -80,6 +81,17 @@ public class  SanPhamChiTietServiceImpl implements SanPhamChiTietService {
         }
     }
 
+    @Override
+    public SanPhamChiTietDto findById(Long id) {
+        System.out.println("hjhjh: " + sanPhamChiTietRepository.findById(id));
+        SanPhamChiTiet sanPhamChiTiet = sanPhamChiTietRepository.findById(id).get();
+        SanPhamChiTietDto sanPhamChiTietDto = new SanPhamChiTietDto();
+        sanPhamChiTietDto.setId(sanPhamChiTiet.getId());
+        sanPhamChiTietDto.setTenSanPham(sanPhamChiTiet.getIdSanPham().getTenSanPham());
+        sanPhamChiTietDto.setGiaBan(sanPhamChiTiet.getGiaBan());
+        sanPhamChiTietDto.setSoLuong(sanPhamChiTiet.getSoLuong());
+        return sanPhamChiTietDto;
+    }
 
     @Override
     public SanPhamChiTiet detail(Long id) {
